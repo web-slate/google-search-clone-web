@@ -1,2 +1,2 @@
-# google-search-clone-web
-Google Search Clone Web Repo
+# Google Search Clone Web Repo
+This repo contains all main frontend framework.
