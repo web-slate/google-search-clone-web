@@ -3,4 +3,4 @@ import ReactDOM from 'react-dom'
 
 import App from './App'
 
-ReactDOM.render(<App />, document.getElementById('test-chef-1'))
+ReactDOM.render(<App />, document.getElementById('google-search-clone-web'))

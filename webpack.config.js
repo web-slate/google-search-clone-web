@@ -59,7 +59,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "public"),
-    filename: "test-chef-1.js",
+    filename: "google-search-clone-web.js",
     chunkFilename: "[name].js",
   },
   plugins: [
@@ -73,7 +73,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: path.resolve(__dirname, "src/static/index.html"),
-      APP_ROOT_ID: 'test-chef-1',
+      APP_ROOT_ID: 'google-search-clone-web',
       APP_VERSION: PACKAGE.version
     }),
 
