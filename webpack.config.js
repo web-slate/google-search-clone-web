@@ -1,11 +1,11 @@
 
 const webpack = require("webpack");
 const path = require("path");
-const PACKAGE = require("./package.json");
 
 // WebPack Plugins.
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const PACKAGE = require("./package.json");
 
 module.exports = {
   entry: "./src/index.js",
@@ -16,6 +16,13 @@ module.exports = {
         exclude: [/node_modules/],
         use: ["babel-loader"],
       },
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader"
+        ],
+      },    
       {
         test: /.svg$/,
         use: ["@svgr/webpack", "file-loader"],
