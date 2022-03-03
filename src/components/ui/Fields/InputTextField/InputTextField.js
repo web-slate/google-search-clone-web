@@ -1,27 +1,12 @@
 import React from 'react'
+import styles from './InputTextField.module.css'
 
-export default function InputTextField({
-  name,
-  initialValue = '',
-  value,
-  placeholder,
-  handleChange,
-  onBlur,
-}) {
-  const onChange = (event) => {
-    handleChange(event)
-  }
-
+function InputTextField() {
   return (
-    <div>
-      <input
-        name={name}
-        type="text"
-        placeholder={placeholder}
-        value={value || initialValue}
-        onChange={onChange}
-        onBlur={onBlur}
-      />
-    </div>
+    <>
+      <p className={styles.line}>InputTextField goes here.</p>
+    </>
   )
 }
+
+export default InputTextField

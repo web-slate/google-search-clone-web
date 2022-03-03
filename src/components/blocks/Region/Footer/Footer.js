@@ -1,25 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import styles from './Footer.module.css'
 
-const Footer = (props) => {
-  const { className, ...rest } = props
-
+function Footer() {
   return (
-    <div {...rest}>
-      <div>
-        &copy;{' '}
-        <a href="http://react-chef/" target="_blank">
-          React Chef
-        </a>
-        . 2020
-      </div>
-      <div>React Chef</div>
-    </div>
+    <>
+      <p className={styles.line}>Footer goes here.</p>
+    </>
   )
-}
-
-Footer.propTypes = {
-  className: PropTypes.string,
 }
 
 export default Footer
