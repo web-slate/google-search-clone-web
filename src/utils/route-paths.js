@@ -1,5 +1,5 @@
 export default {
-  SignIn: '/',
-  DashBoard: '/dashboard',
+  Home: '/',
+  SearchResults: '/search',
   NotFound: '/not-found',
 }
