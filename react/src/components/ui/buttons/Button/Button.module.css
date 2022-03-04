@@ -1,5 +1,25 @@
+.button {
+  border: 1px solid;
+  border-radius: 4px;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  line-height: 27px;
+  height: 36px;
+  min-width: 54px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
 
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.button.light {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  color: #3c4043;
+}
+
+.button.primary {
+  background-color: #2b7de9;
+  color: white
+}
