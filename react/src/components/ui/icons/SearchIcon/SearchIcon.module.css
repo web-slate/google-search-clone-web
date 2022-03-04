@@ -1,5 +1,3 @@
-
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.root {
+    display: block;
+}
