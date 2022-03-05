@@ -1,12 +1,13 @@
 import React from 'react'
+
+// ui components
+import AutoCompleteSearchBox from '@/blocks/AutoCompleteSearchBox'
+
+// styles
 import styles from './Home.module.css'
 
 function Home() {
-  return (
-    <>
-      <p className={styles.line}>Home goes here.</p>
-    </>
-  )
+  return <AutoCompleteSearchBox />
 }
 
 export default Home
