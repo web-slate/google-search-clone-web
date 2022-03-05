@@ -1,11 +1,18 @@
 import React from 'react'
+
+// ui
+import LocationInfo from './LocationInfo'
+import FooterMenu from './FooterMenu'
+
+// styles
 import styles from './Footer.module.css'
 
 function Footer() {
   return (
-    <>
-      <p className={styles.line}>Footer goes here.</p>
-    </>
+    <div className={styles.container}>
+      <LocationInfo />
+      <FooterMenu />
+    </div>
   )
 }
 
