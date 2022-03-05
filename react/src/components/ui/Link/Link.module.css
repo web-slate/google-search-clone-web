@@ -3,6 +3,7 @@
   line-height: 1.5rem;
   vertical-align: middle;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .link:hover {
