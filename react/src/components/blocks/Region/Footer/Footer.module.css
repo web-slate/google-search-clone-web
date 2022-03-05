@@ -1,5 +1,5 @@
-
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.container {
+  background: #f2f2f2;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}

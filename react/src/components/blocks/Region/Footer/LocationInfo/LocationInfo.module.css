@@ -1,5 +1,6 @@
-
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.container {
+  padding: 15px 30px;
+  border-bottom: 1px solid #dadce0;
+  font-size: 15px;
+  color: #70757a;
+}
