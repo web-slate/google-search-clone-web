@@ -3,9 +3,15 @@ import styles from './Logo.module.css'
 
 function Logo() {
   return (
-    <>
-      <p className={styles.line}>Logo goes here.</p>
-    </>
+    <div className={styles.container}>
+      <div className={styles.logoContainer}>
+        <img
+          alt="google-logo"
+          src="/images/google_logo.png"
+          className={styles.logo}
+        />
+      </div>
+    </div>
   )
 }
 
