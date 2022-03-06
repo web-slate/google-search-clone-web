@@ -1,5 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 5.75rem;
+  max-height: 18.125rem;
+  height: calc(100% - 35rem);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
 
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.logoContainer {
+  max-height: 5.75rem;
+  position: relative;
+  height: 100%;
+  margin-top: auto;
+}
+
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  width: auto;
+  height: 5.75rem;
+  aspect-ratio: auto 272 / 92;
+}
