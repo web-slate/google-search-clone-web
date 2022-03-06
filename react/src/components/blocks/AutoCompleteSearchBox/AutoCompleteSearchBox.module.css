@@ -8,6 +8,7 @@
   border-radius: 24px;
   margin: 0 auto;
   width: 638px;
+  position: relative;
 }
 
 .autoComplete {
