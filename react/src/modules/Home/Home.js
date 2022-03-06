@@ -1,7 +1,7 @@
 import React from 'react'
 
 // ui components
-import { Header, Footer } from '@/blocks/Region'
+import { Header, Footer, Logo } from '@/blocks/Region'
 import LanguageSwitcher from '@/blocks/LanguageSwitcher'
 import SearchForm from '@/blocks/SearchForm'
 
@@ -12,6 +12,7 @@ function Home() {
   return (
     <div className={styles.container}>
       <Header />
+      <Logo />
       <SearchForm />
       <LanguageSwitcher />
       <Footer />
