@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: change directory
-        run: cd react
+        run: cd /home/runner/work/google-search-clone-web/google-search-clone-web/react
       - name: npm install and build
         run: |
           npm i
