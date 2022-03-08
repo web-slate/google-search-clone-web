@@ -65,7 +65,7 @@ module.exports = {
     },
   },
   output: {
-    path: path.resolve(__dirname, "react-web"),
+    path: path.resolve(__dirname, "../react-web"),
     filename: "google-search-clone-web.js",
     chunkFilename: "[name].js",
   },
