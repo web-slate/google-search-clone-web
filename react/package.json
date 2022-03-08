@@ -7,7 +7,8 @@
     "build": "webpack --mode production --progress",
     "lint": "eslint src --ext .js",
     "prettier": "prettier --write src",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",

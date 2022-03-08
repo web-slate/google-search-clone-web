@@ -33,7 +33,7 @@ jobs:
           npm i
           npm install gh-pages
           npm run build --if-present
-          gh-pages -d build
+          npm run deploy
       - name: list files in dir
         run: |
           ls /home/runner/work/google-search-clone-web/google-search-clone-web/react/react-web
