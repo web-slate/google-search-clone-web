@@ -38,3 +38,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./react-web
           destination_dir: reactweb
+      - name: list files in dir
+        run: |
+          ls /home/runner/work/google-search-clone-web/google-search-clone-web
