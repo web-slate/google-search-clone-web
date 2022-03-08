@@ -8,6 +8,10 @@ on:
   pull_request:
     branches: [ main ]
 
+defaults:
+  run:
+    working-directory: react
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build_test:
@@ -26,9 +30,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: change directory
-        run: 
-          working-directory: ./react
       - name: npm install and build
         run: |
           npm i
