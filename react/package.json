@@ -8,7 +8,7 @@
     "lint": "eslint src --ext .js",
     "prettier": "prettier --write src",
     "clean": "rm -rf node_modules",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d react-web"
   },
   "keywords": [],
   "author": "",
