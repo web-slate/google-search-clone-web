@@ -7,8 +7,7 @@
     "build": "webpack --mode production --progress",
     "lint": "eslint src --ext .js",
     "prettier": "prettier --write src",
-    "clean": "rm -rf node_modules",
-    "deploy": "gh-pages -d react-web"
+    "clean": "rm -rf node_modules"
   },
   "keywords": [],
   "author": "",
