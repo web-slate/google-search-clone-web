@@ -1,6 +1,7 @@
 {
   "name": "google-search-clone-web",
   "version": "1.0.0",
+  "homepage": ".",
   "description": "",
   "scripts": {
     "dev": "webpack serve --mode development",
