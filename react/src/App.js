@@ -15,7 +15,7 @@ function App() {
   return (
     <ErrorHandler>
       <PageLoader />
-      <Router history={browserHistory}>
+      <Router history={browserHistory} basename="/react">
         <Routes />
       </Router>
     </ErrorHandler>
