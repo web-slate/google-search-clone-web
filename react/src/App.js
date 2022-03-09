@@ -15,7 +15,7 @@ function App() {
   return (
     <ErrorHandler>
       <PageLoader />
-      <Router history={browserHistory} basename="/react">
+      <Router history={browserHistory} basename="/google-search-clone-web/react">
         <Routes />
       </Router>
     </ErrorHandler>
