@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './Logo.module.css'
+// image import
+import GoogleLogo from '../../../../static/images/google_logo.png';
 
 function Logo() {
   return (
@@ -7,7 +9,7 @@ function Logo() {
       <div className={styles.logoContainer}>
         <img
           alt="google-logo"
-          src="/images/google_logo.png"
+          src={GoogleLogo}
           className={styles.logo}
         />
       </div>
