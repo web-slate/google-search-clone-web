@@ -1,4 +1,6 @@
 import React from 'react'
+// i18n
+import { useI18n } from '@/i18n'
 
 // ui
 import Link from '@/ui/Link'
@@ -19,11 +21,12 @@ const languages = [
 ]
 
 function LanguageSwitcher() {
+  const { formatMessage } = useI18n()
   return (
     <div className={styles.container}>
       <div className={styles.langListContainer}>
         <div className={styles.langList}>
-          Google offered in:&nbsp;
+          {formatMessage({ id: 'googleofferedin' })}:&nbsp;
           {languages.map((lang) => (
             <Link key={lang} className={styles.langLink} title={lang} />
           ))}
