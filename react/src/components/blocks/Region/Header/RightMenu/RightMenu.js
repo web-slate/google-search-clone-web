@@ -24,6 +24,7 @@ function RightMenu() {
       </div>
       <div className={styles.appIcon}>
         <IconButton
+          onClick={() => {}}
           icon={<AppIcon size={24} color={Palette.color.graniteGray} />}
         />
       </div>
@@ -32,6 +33,7 @@ function RightMenu() {
           fullWidth
           variant="primary"
           title={formatMessage({ id: 'signin' })}
+          onClick={() => {}}
         />
       </div>
     </div>

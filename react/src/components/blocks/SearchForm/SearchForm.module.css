@@ -4,25 +4,3 @@
   max-height: 10rem;
   padding: 1.25rem;
 }
-
-.searchForm {
-  display: block;
-  margin-top: 0;
-}
-
-.searchFormContainer {
-  margin: 0 auto;
-  padding-top: 6px;
-  width: auto;
-  max-width: 584px;
-  position: relative;
-}
-
-.searchFormActions {
-  height: 4.375rem;
-  padding-top: 1.125rem;
-}
-
-.actionButton {
-  margin: 11px 4px;
-}

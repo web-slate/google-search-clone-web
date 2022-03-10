@@ -1,64 +1,37 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 
 // ui
-import { IconButton } from '@/ui/buttons/IconButton'
-import AutoCompleteListItem from './AutoCompleteListItem'
+import { Button } from '@/ui/buttons'
 
-// icons
-import SearchIcon from '@/ui/icons/SearchIcon'
-import CloseIcon from '@/ui/icons/CloseIcon'
+// i18n
+import { useI18n } from '@/i18n'
 
-// utils
-import Palette from '@/utils/palette'
+// ui
+import AutoCompleteInput from '@/ui/Fields/AutoCompleteInput'
 
-// styles
 import styles from './AutoCompleteSearchBox.module.css'
 
 function AutoCompleteSearchBox() {
-  const [value, setValue] = useState('')
-
-  const clearValues = useCallback(() => {
-    setValue('')
-  }, [])
-
+  const { formatMessage } = useI18n()
   return (
-    <div
-      className={`${styles.autoCompleteContainer} ${
-        value ? styles.expanded : ''
-      }`}
-    >
-      <div className={styles.autoComplete}>
-        <div className={styles.searchIcon}>
-          <SearchIcon size={20} color={Palette.color.manatee} />
-        </div>
-        <input
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-          className={styles.autoCompleteInput}
-          type="text"
-        />
-        {value && (
-          <IconButton
-            onClick={clearValues}
-            icon={<CloseIcon size={24} color={Palette.color.manatee} />}
-          />
-        )}
-      </div>
-      {value && (
-        <>
-          <div className={styles.divider} />
-          <div className={styles.autoCompleteResultContainer}>
-            <ul className={styles.autoCompleteResultList} role="listbox">
-              <AutoCompleteListItem
-                item={{ title: 'Result 1', subTitle: 'Sub Title 1' }}
+    <div className={styles.container}>
+      <form className={styles.searchForm}>
+        <div className={styles.searchFormContainer}>
+          <AutoCompleteInput />
+          <div className={styles.searchFormActions}>
+            <center>
+              <Button
+                className={styles.actionButton}
+                title={formatMessage({ id: 'googlesearch' })}
               />
-              <AutoCompleteListItem
-                item={{ title: 'Result 2', subTitle: 'Sub Title 2' }}
+              <Button
+                className={styles.actionButton}
+                title={formatMessage({ id: 'imfeelinglucky' })}
               />
-            </ul>
+            </center>
           </div>
-        </>
-      )}
+        </div>
+      </form>
     </div>
   )
 }

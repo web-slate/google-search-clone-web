@@ -1,9 +1,9 @@
 import React from 'react'
 
-// ui components
+// block components
 import { Header, Footer, Logo } from '@/blocks/Region'
 import LanguageSwitcher from '@/blocks/LanguageSwitcher'
-import SearchForm from '@/blocks/SearchForm'
+import AutoCompleteSearchBox from '@/blocks/AutoCompleteSearchBox'
 
 // styles
 import styles from './Home.module.css'
@@ -13,7 +13,7 @@ function Home() {
     <div className={styles.container}>
       <Header />
       <Logo />
-      <SearchForm />
+      <AutoCompleteSearchBox />
       <LanguageSwitcher />
       <Footer />
     </div>
