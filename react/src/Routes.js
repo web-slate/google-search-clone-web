@@ -12,7 +12,9 @@ const HomeModule = React.lazy(() =>
 )
 
 const SearchResultsModule = React.lazy(() =>
-  import(/* webpackChunkName: "modules/SearchResultModule" */ './modules/SearchResults')
+  import(
+    /* webpackChunkName: "modules/SearchResultModule" */ './modules/SearchResults'
+  )
 )
 
 const NotFoundModule = React.lazy(() =>
@@ -24,7 +26,10 @@ const RoutesComponent = () => {
     <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route path={RoutePaths.Home} exact element={<HomeModule />} />
-        <Route path={RoutePaths.SearchResults} element={<SearchResultsModule />} />
+        <Route
+          path={RoutePaths.SearchResults}
+          element={<SearchResultsModule />}
+        />
         <Route path="*" element={<NotFoundModule />} />
       </Routes>
     </Suspense>
