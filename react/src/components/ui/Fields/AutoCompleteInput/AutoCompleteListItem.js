@@ -8,7 +8,7 @@ import Palette from '@/utils/palette'
 import SearchIcon from '@/ui/icons/SearchIcon'
 
 // styles
-import styles from './AutoCompleteSearchBox.module.css'
+import styles from './AutoCompleteInput.module.css'
 
 function AutoCompleteListItem({ item }) {
   return (
