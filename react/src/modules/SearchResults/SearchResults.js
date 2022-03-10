@@ -1,11 +1,16 @@
 import React from 'react'
+
+// blocks
+import SearchForm from '@/blocks/SearchForm'
+
+// styles
 import styles from './SearchResults.module.css'
 
 function SearchResults() {
   return (
-    <>
-      <p className={styles.line}>SearchResults goes here.</p>
-    </>
+    <div className={styles.container}>
+      <SearchForm />
+    </div>
   )
 }
 

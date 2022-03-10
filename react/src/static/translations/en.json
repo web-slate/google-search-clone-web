@@ -1,4 +1,5 @@
 {
+  "google": "Google",
   "gmail": "Gmail",
   "images": "Images",
   "signin": "Sign in",
@@ -11,7 +12,7 @@
   "terms": "Terms",
   "settings": "Settings",
   "india": "India",
-  "googlesearch": "Google Search",
   "imfeelinglucky": "I'm Feeling Lucky",
-  "googleofferedin": "Google Offered In"
+  "googleofferedin": "Google Offered In",
+  "gotogooglehome": "Go to Google Home"
 }

@@ -1,5 +1,8 @@
-
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.container {
+  display: flex;
+  min-width: 1121px;
+  width: 100%;
+  height: 150vh;
+  overflow: scroll;
+  position: relative;
+}
