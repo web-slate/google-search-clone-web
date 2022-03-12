@@ -1,5 +1,9 @@
-
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.resultCount {
+  display: flex;
+  position: absolute;
+  top: 0;
+  color: #70757a;
+  justify-content: space-between;
+  min-width: 652px;
+  line-height: 43px;
+}
