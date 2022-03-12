@@ -1,10 +1,18 @@
 import React from 'react'
-import styles from './ResultList.module.css'
+
+// component
+import ResultListItem from './ResultListItem'
 
 function ResultList() {
   return (
     <>
-      <p className={styles.line}>ResultList goes here.</p>
+      <ResultListItem
+        item={{
+          description: 'Sample description',
+          title: 'Sample Title',
+          link: 'https://google.com',
+        }}
+      />
     </>
   )
 }
