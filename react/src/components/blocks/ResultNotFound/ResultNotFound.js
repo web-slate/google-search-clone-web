@@ -1,22 +1,28 @@
 import React from 'react'
 import styles from './ResultNotFound.module.css'
+// i18n
+import { useI18n } from '@/i18n'
+
 // image import
-import ResultNotFoundImg from '../../../static/images/result_not_found.svg'
+import NoResultFoundImg from '../../../static/images/result_not_found.svg'
 
 function ResultNotFound(props) {
 
+  const { searchText = '' } = props
+  const { formatMessage } = useI18n()
+
   return (
     <>
-      <p>Your search -{props.searchText} - did not match any documents.</p>
-      <p> Suggestions:</p>
+      <p>{formatMessage({ id: 'noresultfound' })} -{searchText} - {formatMessage({ id: 'didnotmatchanydocuments' })}.</p>
+      <p>{formatMessage({ id: 'suggestions' })} :</p>
       <ul>
-            <li> Make sure that all words are spelled correctly. </li>
-            <li> Try different keywords. </li>
-            <li> Try more general keywords.</li>
+            <li> {formatMessage({ id: 'make_sure_that_all_words_are_spelled_correctly' })}.</li>
+            <li> {formatMessage({ id: 'try_different_keywords' })}. </li>
+            <li> {formatMessage({ id: 'try_more_general_keywords' })}.</li>
       </ul>
       <img
-        src={ResultNotFoundImg}
-        alt='ResultNotFound'
+        src={NoResultFoundImg}
+        alt={formatMessage({ id: 'noresultfound' })}
         height="30"
         width="52"
         data-atf="1"
