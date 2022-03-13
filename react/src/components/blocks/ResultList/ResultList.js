@@ -1,12 +1,18 @@
 import React from 'react'
-import styles from './ResultList.module.css'
-import {ResultNotFound} from './ResultNotFound'
+
+// component
+import ResultListItem from './ResultListItem'
 
 function ResultList() {
   return (
     <>
-      <p className={styles.line}>ResultList goes here.</p>
-      <ResultNotFound />
+      <ResultListItem
+        item={{
+          description: 'Sample description',
+          title: 'Sample Title',
+          link: 'https://google.com',
+        }}
+      />
     </>
   )
 }
