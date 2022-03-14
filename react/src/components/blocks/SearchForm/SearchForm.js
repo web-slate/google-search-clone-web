@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // ui
 import AutoCompleteInput from '@/ui/Fields/AutoCompleteInput'
@@ -13,7 +14,7 @@ import GoogleLogo from '../../../static/images/google_logo.png'
 // styles
 import styles from './SearchForm.module.css'
 
-function SearchForm() {
+function SearchForm(props) {
   const { formatMessage } = useI18n()
 
   return (
@@ -32,12 +33,16 @@ function SearchForm() {
               />
             </a>
           </div>
-          <AutoCompleteInput />
+          <AutoCompleteInput onChange={props.onChange} />
         </div>
         <Controls />
       </div>
     </div>
   )
+}
+
+SearchForm.propTypes = {
+  onChange: PropTypes.func.isRequired,
 }
 
 export default SearchForm

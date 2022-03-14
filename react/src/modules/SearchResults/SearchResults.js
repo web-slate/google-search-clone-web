@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 // blocks
 import SearchForm from '@/blocks/SearchForm'
@@ -9,10 +10,26 @@ import NoResultFound from '@/blocks/ResultNotFound'
 // styles
 import styles from './SearchResults.module.css'
 
-function SearchResults() {
+// hooks
+import useFetch from '@/hooks/useFetch'
+
+// utils
+import { API_URL } from '@/utils'
+
+function SearchResults(props) {
+  const [query, setQuery] = useState(props.query || '')
+
+  const res = useFetch(`${API_URL}/search?searchterm=${query}`)
+
+  const onSearch = () => {}
+
+  useEffect(() => {
+    console.log(res)
+  }, [res])
+
   return (
     <>
-      <SearchForm />
+      <SearchForm onChange={(e) => setQuery(e)} />
       <div className={styles.container}>
         <div className={styles.resultPage}>
           <div className={styles.resultCount}>
@@ -23,6 +40,10 @@ function SearchResults() {
       </div>
     </>
   )
+}
+
+SearchResults.propTypes = {
+  query: PropTypes.string.isRequired,
 }
 
 export default SearchResults

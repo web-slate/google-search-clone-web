@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import PropTypes from 'prop-types'
 
 // ui
 import { IconButton } from '@/ui/buttons/IconButton'
@@ -14,12 +15,20 @@ import Palette from '@/utils/palette'
 // styles
 import styles from './AutoCompleteInput.module.css'
 
-function AutoCompleteInput() {
+function AutoCompleteInput(props) {
   const [value, setValue] = useState('')
 
   const clearValues = useCallback(() => {
     setValue('')
   }, [])
+
+  const onChange = useCallback(
+    (e) => {
+      setValue(e.target.value)
+      props.onChange(e.target.value)
+    },
+    [setValue]
+  )
 
   return (
     <div
@@ -33,7 +42,7 @@ function AutoCompleteInput() {
         </div>
         <input
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           className={styles.autoCompleteInput}
           type="text"
         />
@@ -61,6 +70,10 @@ function AutoCompleteInput() {
       )}
     </div>
   )
+}
+
+AutoCompleteInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
 }
 
 export default AutoCompleteInput
