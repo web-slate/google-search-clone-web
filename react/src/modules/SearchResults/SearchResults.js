@@ -3,6 +3,8 @@ import React from 'react'
 // blocks
 import SearchForm from '@/blocks/SearchForm'
 import ResultList from '@/blocks/ResultList'
+import NoResultFound from '@/blocks/ResultNotFound'
+
 
 // styles
 import styles from './SearchResults.module.css'

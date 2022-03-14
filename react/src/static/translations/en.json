@@ -16,5 +16,12 @@
   "googleofferedin": "Google Offered In",
   "gotogooglehome": "Go to Google Home",
   "404pagenotfound": "404 - Page not found",
-  "goback": "Go back"
+  "goback": "Go back",
+  "yoursearch": "Your search",
+  "didnotmatchanydocuments": "did not match any documents",
+  "suggestions": "Suggestions",
+  "try_different_keywords": "Try different keywords",
+  "try_more_general_keywords": "Try more general keywords",
+  "noresultfound" : "NoResultFound",
+  "make_sure_that_all_words_are_spelled_correctly": "Make sure that all words are spelled correctly"
 }
