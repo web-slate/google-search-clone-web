@@ -13,8 +13,8 @@ function ResultNotFound(props) {
 
   return (
     <>
-      <p>{formatMessage({ id: 'noresultfound' })} -{searchText} - {formatMessage({ id: 'didnotmatchanydocuments' })}.</p>
-      <p>{formatMessage({ id: 'suggestions' })} :</p>
+      <h2>{formatMessage({ id: 'yoursearch' })} - {searchText} - {formatMessage({ id: 'didnotmatchanydocuments' })}.</h2>
+      <h3>{formatMessage({ id: 'suggestions' })} :</h3>
       <ul>
             <li> {formatMessage({ id: 'make_sure_that_all_words_are_spelled_correctly' })}.</li>
             <li> {formatMessage({ id: 'try_different_keywords' })}. </li>
@@ -23,10 +23,8 @@ function ResultNotFound(props) {
       <img
         src={NoResultFoundImg}
         alt={formatMessage({ id: 'noresultfound' })}
-        height="30"
-        width="52"
-        data-atf="1"
-        data-frt="0"
+        height="500"
+        width="600"
       />
     </>
   )
