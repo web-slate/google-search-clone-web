@@ -1,4 +1,7 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
+
+import { useSearchParams } from "react-router-dom";
 
 // ui
 import { IconButton } from '@/ui/buttons/IconButton'
@@ -14,12 +17,52 @@ import Palette from '@/utils/palette'
 // styles
 import styles from './AutoCompleteInput.module.css'
 
-function AutoCompleteInput() {
-  const [value, setValue] = useState('')
+import useFetch from '@/hooks/useFetch'
+
+
+// utils
+import { API_URL } from '@/utils'
+
+
+
+
+function AutoCompleteInput(props) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const q = searchParams.get('q')
+
+  const [value, setValue] = useState(q || '')
+  const [response, setResponse] = useState([])
+
+  const res = useFetch(`${API_URL}/search?searchTerm=${value}`)
+
+
+
+  useEffect(() => {
+    if(res.response) {
+        setResponse(res.response)
+    }
+  }, [res])
+
+  useEffect(() => {
+    if(q) {
+        setResponse([])
+    }
+  }, [q])
 
   const clearValues = useCallback(() => {
     setValue('')
   }, [])
+
+  const onChange = useCallback(
+    (e) => {
+      setValue(e.target.value)
+      props.onChange(e.target.value)
+
+    },
+    [setValue]
+  )
+
+
 
   return (
     <div
@@ -33,7 +76,7 @@ function AutoCompleteInput() {
         </div>
         <input
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           className={styles.autoCompleteInput}
           type="text"
         />
@@ -49,18 +92,27 @@ function AutoCompleteInput() {
           <div className={styles.divider} />
           <div className={styles.autoCompleteResultContainer}>
             <ul className={styles.autoCompleteResultList} role="listbox">
-              <AutoCompleteListItem
-                item={{ title: 'Result 1', subTitle: 'Sub Title 1' }}
-              />
-              <AutoCompleteListItem
-                item={{ title: 'Result 2', subTitle: 'Sub Title 2' }}
-              />
+              {response.map((data) =>
+                 <AutoCompleteListItem
+                  item={{ title: data.title, subTitle: data.content }}
+                  />
+              )}
             </ul>
           </div>
         </>
       )}
     </div>
   )
+}
+
+// Specifies the default values for props:
+AutoCompleteInput.defaultProps = {
+  onChange: () => {
+  }
+};
+
+AutoCompleteInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
 }
 
 export default AutoCompleteInput
