@@ -3,16 +3,19 @@ import React from 'react'
 // component
 import ResultListItem from './ResultListItem'
 
-function ResultList() {
+function ResultList(props) {
+  const { resultData = '' } = props
   return (
     <>
-      <ResultListItem
-        item={{
-          description: 'Sample description',
-          title: 'Sample Title',
-          link: 'https://google.com',
-        }}
-      />
+    {resultData.map((data) => {
+      return (<ResultListItem
+        item={{ title: data.title,
+                description: data.content,
+                link: data.url,
+             }}
+        />)
+    })}
+    
     </>
   )
 }
