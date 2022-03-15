@@ -17,7 +17,7 @@ function App() {
       <PageLoader />
       <Router
         history={browserHistory}
-        // basename="/google-search-clone-web/react"
+        basename="/google-search-clone-web/react"
       >
         <Routes />
       </Router>
