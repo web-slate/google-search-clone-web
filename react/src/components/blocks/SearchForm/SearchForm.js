@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // ui
-import AutoCompleteInput from '@/ui/Fields/AutoCompleteInput'
+import InputTextField from '@/ui/Fields/InputTextField'
 import Controls from './Controls'
 
 // i18n
@@ -33,7 +33,7 @@ function SearchForm(props) {
               />
             </a>
           </div>
-          <AutoCompleteInput onChange={props.onChange} />
+          <InputTextField {...props} />
         </div>
         <Controls />
       </div>
@@ -42,6 +42,7 @@ function SearchForm(props) {
 }
 
 SearchForm.propTypes = {
+  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 }
 
