@@ -5,11 +5,9 @@ import PropTypes from 'prop-types'
 import styles from './ResultListItem.module.css'
 
 function ResultListItem(prop) {
-  const { query, item = {} } = prop
+  const { item = {} } = prop
 
   const { description = '', title = '', link = '' } = item || {}
-
-  const desc = description.split(query)
 
   return (
     <div className={styles.container}>
@@ -27,11 +25,7 @@ function ResultListItem(prop) {
         {item.description && (
           <div className={styles.descContainer}>
             <div>
-              <span>
-                {desc[0]}
-                <b>{query}</b>
-                {desc[1]}
-              </span>
+              <span>{description}</span>
             </div>
           </div>
         )}

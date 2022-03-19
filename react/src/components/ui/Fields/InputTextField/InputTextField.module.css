@@ -1,5 +1,60 @@
+.inputContainer {
+  display: block;
+  height: 44px;
+  background: #fff;
+  border: 1px solid #dfe1e5;
+  max-width: 584px;
+  box-shadow: none;
+  border-radius: 24px;
+  margin: 0 auto;
+  width: 638px;
+  position: relative;
+}
 
-  /* TODO: Component CSS Style goes here */
-  .line {
-    color: blue;
-  }
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  padding-right: 0.5rem;
+  height: 1.75rem;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, .87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+}
+
+.searchButton {
+  margin: 0;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+  outline: 0;
+}
+
+.iconContainer {
+  display: block;
+  background: none;
+  color: #4285f4;
+  margin: auto;
+}
+
+.divider {
+  height: 100%;
+  width: 1px;
+  background-color: #dadce0;
+  margin-right: 10px;
+}

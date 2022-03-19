@@ -1,11 +1,8 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-
-import { useSearchParams } from "react-router-dom";
 
 // ui
 import { IconButton } from '@/ui/buttons/IconButton'
-import AutoCompleteListItem from './AutoCompleteListItem'
 
 // icons
 import SearchIcon from '@/ui/icons/SearchIcon'
@@ -17,57 +14,15 @@ import Palette from '@/utils/palette'
 // styles
 import styles from './AutoCompleteInput.module.css'
 
-import useFetch from '@/hooks/useFetch'
-
-
-// utils
-import { API_URL } from '@/utils'
-
-
-
-
 function AutoCompleteInput(props) {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const q = searchParams.get('q')
+  const { value, onChange, onClear, result } = props || {}
 
-  const [value, setValue] = useState(q || '')
-  const [response, setResponse] = useState([])
-
-  const res = useFetch(`${API_URL}/search?searchTerm=${value}`)
-
-
-
-  useEffect(() => {
-    if(res.response) {
-        setResponse(res.response)
-    }
-  }, [res])
-
-  useEffect(() => {
-    if(q) {
-        setResponse([])
-    }
-  }, [q])
-
-  const clearValues = useCallback(() => {
-    setValue('')
-  }, [])
-
-  const onChange = useCallback(
-    (e) => {
-      setValue(e.target.value)
-      props.onChange(e.target.value)
-
-    },
-    [setValue]
-  )
-
-
+  const hasResult = result.length > 0
 
   return (
     <div
       className={`${styles.autoCompleteContainer} ${
-        value ? styles.expanded : ''
+        hasResult ? styles.expanded : ''
       }`}
     >
       <div className={styles.autoComplete}>
@@ -82,21 +37,21 @@ function AutoCompleteInput(props) {
         />
         {value && (
           <IconButton
-            onClick={clearValues}
+            onClick={onClear}
             icon={<CloseIcon size={24} color={Palette.color.manatee} />}
           />
         )}
       </div>
-      {value && (
+      {hasResult && (
         <>
           <div className={styles.divider} />
           <div className={styles.autoCompleteResultContainer}>
             <ul className={styles.autoCompleteResultList} role="listbox">
-              {response.map((data) =>
-                 <AutoCompleteListItem
+              {result.map((data) => (
+                <AutoCompleteListItem
                   item={{ title: data.title, subTitle: data.content }}
-                  />
-              )}
+                />
+              ))}
             </ul>
           </div>
         </>
@@ -105,14 +60,18 @@ function AutoCompleteInput(props) {
   )
 }
 
-// Specifies the default values for props:
 AutoCompleteInput.defaultProps = {
-  onChange: () => {
-  }
-};
+  query: '',
+  result: [],
+  onChange: () => {},
+  onClear: () => {},
+}
 
 AutoCompleteInput.propTypes = {
-  onChange: PropTypes.func.isRequired,
+  result: PropTypes.arrayOf(PropTypes.string),
+  onChange: PropTypes.func,
+  onClear: PropTypes.func,
+  value: PropTypes.string,
 }
 
 export default AutoCompleteInput
