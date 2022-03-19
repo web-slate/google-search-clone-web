@@ -13,6 +13,7 @@ function ResultNotFound(props) {
 
   return (
     <>
+    <div class={styles.container}>
       <h2>{formatMessage({ id: 'yoursearch' })} - {searchText} - {formatMessage({ id: 'didnotmatchanydocuments' })}.</h2>
       <h3>{formatMessage({ id: 'suggestions' })} :</h3>
       <ul>
@@ -26,6 +27,7 @@ function ResultNotFound(props) {
         height="500"
         width="600"
       />
+      </div>
     </>
   )
 }
