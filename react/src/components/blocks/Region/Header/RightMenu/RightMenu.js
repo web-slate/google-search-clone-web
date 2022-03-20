@@ -24,7 +24,7 @@ function RightMenu() {
       </div>
       <div className={styles.appIcon}>
         <IconButton
-          onClick={() => {}}
+          onClick={(event) => event.preventDefault() }
           icon={<AppIcon size={24} color={Palette.color.graniteGray} />}
         />
       </div>
