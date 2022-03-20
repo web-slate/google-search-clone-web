@@ -3,12 +3,17 @@ import PropTypes from 'prop-types'
 
 // component
 import ResultListItem from './ResultListItem'
+import NoResultFound from '@/blocks/ResultNotFound'
 
 // styles
 import styles from './ResultList.module.css'
 
 function ResultList(props) {
-  const { query, data = [] } = props
+  const { query, data } = props
+
+  if (!(data && data.length)) {
+    return <NoResultFound searchText={query} />
+  }
 
   return (
     <div className={styles.container}>
@@ -17,9 +22,9 @@ function ResultList(props) {
           About {data.length} results
           <nobr> (0.61 seconds)&nbsp;</nobr>
         </div>
-        {data.map((item) => (
+        {data.map((item, i) => (
           <ResultListItem
-            key={item.title}
+            key={`${item.title}-${i}`}
             query={query}
             item={{
               title: item.title,
@@ -42,6 +47,10 @@ ResultList.propTypes = {
       url: PropTypes.string.isRequired,
     })
   ),
+}
+
+ResultList.defaultProps = {
+  data: [],
 }
 
 export default ResultList

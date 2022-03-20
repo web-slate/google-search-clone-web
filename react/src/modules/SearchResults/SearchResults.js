@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
 // blocks
@@ -7,7 +7,7 @@ import ResultList from '@/blocks/ResultList'
 import NoResultFound from '@/blocks/ResultNotFound'
 
 // hooks
-import useFetch from '@/hooks/useFetch'
+import useLazyFetch from '@/hooks/useLazyFetch'
 
 // utils
 import { API_URL } from '@/utils'
@@ -19,9 +19,15 @@ function SearchResults() {
 
   const [query, setQuery] = useState(q || '')
 
-  const { response: searchResults = [] } = useFetch(
-    `${API_URL}/search?searchTerm=${query}`
-  )
+  const {
+    mutate,
+    response: searchResults,
+    loading,
+  } = useLazyFetch(`${API_URL}/search?searchTerm=${query}`)
+
+  useEffect(() => {
+    mutate && mutate()
+  }, [])
 
   return (
     <>
@@ -29,12 +35,9 @@ function SearchResults() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onClear={() => setQuery('')}
+        onSearch={mutate}
       />
-      {searchResults.length ? (
-        <ResultList query={query} data={searchResults} />
-      ) : (
-        <NoResultFound searchText={query} />
-      )}
+      {!loading && <ResultList query={query} data={searchResults} />}
     </>
   )
 }
