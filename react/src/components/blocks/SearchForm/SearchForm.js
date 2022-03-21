@@ -22,7 +22,7 @@ function SearchForm(props) {
       <div className={styles.mainContainer}>
         <div className={styles.formContainer}>
           <div className={styles.logo}>
-            <a href="/" title={formatMessage({ id: 'gotogooglehome' })}>
+            <a href="/google-search-clone-web/react" title={formatMessage({ id: 'gotogooglehome' })}>
               <img
                 src={GoogleLogo}
                 alt={formatMessage({ id: 'google' })}
