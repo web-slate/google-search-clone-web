@@ -19,7 +19,6 @@ function SearchForm(props) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.mainContainer}>
         <div className={styles.formContainer}>
           <div className={styles.logo}>
             <a href="/google-search-clone-web/react" title={formatMessage({ id: 'gotogooglehome' })}>
@@ -33,10 +32,15 @@ function SearchForm(props) {
               />
             </a>
           </div>
-          <InputTextField {...props} />
-        </div>
-        <Controls />
-      </div>
+          <div className={styles.searchForm}>
+            <InputTextField {...props} />
+          </div>
+          <div className={styles.navMenu}>
+            <Controls />
+          </div>
+          
+        </div> 
+      
     </div>
   )
 }
