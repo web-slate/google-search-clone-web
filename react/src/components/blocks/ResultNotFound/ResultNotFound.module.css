@@ -2,3 +2,9 @@
   .container {
     padding-left:9.5rem
   }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+      padding-left: 0.5rem
+    }
+  }

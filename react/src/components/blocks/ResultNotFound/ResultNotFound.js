@@ -31,9 +31,8 @@ function ResultNotFound(props) {
       <img
         src={NoResultFoundImg}
         alt={formatMessage({ id: 'noresultfound' })}
-        height="500"
-        width="600"
-      />
+        height="40%"
+             />
     </div>
   )
 }

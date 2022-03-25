@@ -6,7 +6,6 @@
   text-align: left;
   margin-top: 0;
   margin-bottom: 30px;
-  width: 600px;
   position: relative;
   font-weight: normal;
 }
@@ -87,6 +86,3 @@ cite {
   -webkit-line-clamp: 2
 }
 
-.descContainer span {
-
-}

@@ -1,26 +1,55 @@
 .container {
-  min-width: 1121px;
   z-index: 10;
   width: 100%;
 }
 
-.mainContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 0.5rem;
-}
+
 
 .formContainer {
   display: flex;
   align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top:10px;
+}
+
+
+.searchForm{
+  flex: auto;
+}
+
+.navMenu{
+  
+  width: 20%;
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .formContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+    
+  .searchForm{
+    flex: auto;
+    order: 3;
+    margin-top:10px;
+  }
+  
+  .navMenu{
+    flex: auto;
+    width: 30%;
+    order: 2;
+  }
 }
 
 .controls {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 0 2rem;
+  gap: o.5rem;
+  margin: 0rem 1rem 0rem 6rem;
 }
 
 .controls button {
@@ -28,7 +57,7 @@
 }
 
 .logo {
-  padding: 4px 28px 0 24px;
+  padding: 4px 20px 0 15px;
   top: 6px;
 }
 
