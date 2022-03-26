@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import { Footer } from '@/blocks/Region'
 
 // blocks
 import SearchForm from '@/blocks/SearchForm'
 import ResultList from '@/blocks/ResultList'
-import NoResultFound from '@/blocks/ResultNotFound'
+
 
 // hooks
 import useLazyFetch from '@/hooks/useLazyFetch'
@@ -13,11 +14,11 @@ import useLazyFetch from '@/hooks/useLazyFetch'
 import { API_URL } from '@/utils'
 
 function SearchResults() {
-  const [searchParams] = useSearchParams()
+  const [searchParams] = useSearchParams();
 
-  const q = searchParams.get('q')
+  const q = searchParams.get('q');
 
-  const [query, setQuery] = useState(q || '')
+  const [query, setQuery] = useState(q || '');
 
   const {
     mutate,
@@ -38,6 +39,7 @@ function SearchResults() {
         onSearch={mutate}
       />
       {!loading && <ResultList query={query} data={searchResults} />}
+      <Footer />
     </>
   )
 }
