@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-export default function useLazyFetch(url) {
+export default function useLazyFetch(url, searchString) {
   const [response, setResponse] = useState()
   const [error, setError] = useState()
   const [loading, setLoading] = useState(false)
+  const [searchValue, setSearchValue] = useState(searchString)
 
   const mutate = async () => {
     setLoading(true)
@@ -15,7 +16,8 @@ export default function useLazyFetch(url) {
     })
 
     try {
-      setResponse(res.data)
+      setResponse(res.data);
+      setSearchValue(searchString);
     } catch (err) {
       setError(err)
     } finally {
@@ -28,5 +30,6 @@ export default function useLazyFetch(url) {
     response,
     error,
     loading,
+    searchValue
   }
 }

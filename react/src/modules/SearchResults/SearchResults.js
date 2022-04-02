@@ -12,6 +12,7 @@ import useLazyFetch from '@/hooks/useLazyFetch'
 
 // utils
 import { API_URL } from '@/utils'
+let searchQuery = '';
 
 function SearchResults() {
   const [searchParams] = useSearchParams();
@@ -19,26 +20,28 @@ function SearchResults() {
   const q = searchParams.get('q');
 
   const [query, setQuery] = useState(q || '');
-
+  
   const {
     mutate,
     response: searchResults,
     loading,
-  } = useLazyFetch(`${API_URL}/search?searchTerm=${query}`)
+    searchValue
+  } = useLazyFetch(`${API_URL}/search?searchTerm=${query}`, query)
 
   useEffect(() => {
-    mutate && mutate()
+    mutate && mutate();
+    searchQuery = query;
   }, [])
 
   return (
     <>
       <SearchForm
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => {  setQuery(e.target.value)}}
         onClear={() => setQuery('')}
-        onSearch={mutate}
+        onSearch={query && mutate}
       />
-      {!loading && <ResultList query={query} data={searchResults} />}
+      {!loading && <ResultList query={searchValue} data={searchResults} />}
       <Footer />
     </>
   )
