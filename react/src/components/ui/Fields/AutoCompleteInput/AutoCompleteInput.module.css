@@ -1,0 +1,114 @@
+.autoCompleteContainer {
+  display: block;
+  height: 44px;
+  background: #fff;
+  border: 1px solid #dfe1e5;
+  max-width: 584px;
+  box-shadow: none;
+  border-radius: 24px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.autoComplete {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  padding-right: 0.5rem;
+  height: 1.75rem;
+}
+
+.expanded {
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 4px 6px rgba(32, 33, 36, .28);
+}
+
+.autoCompleteResultContainer {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 4px 6px rgba(32, 33, 36, .28);
+  border: 0;
+  padding-bottom: 4px;
+}
+
+.autoCompleteResultList {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+}
+
+.autoCompleteResultListItem {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.autoCompleteResultListItem:hover {
+  background-color: #eee;
+}
+
+.autoCompleteResultItem {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  margin: 0 1.5rem 0 0.875rem;
+}
+
+.autoCompleteResultItemContent {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0.375rem 0;
+  font-family: arial, sans-serif;
+}
+
+.autoCompleteResultItemTitle {
+  display: flex;
+  font-size: 16px;
+  color: #212121;
+  flex: auto;
+  align-items: center;
+  word-break: break-word;
+  padding-right: 8px;
+}
+
+.autoCompleteResultItemSubTitle {
+  line-height: 12px;
+  font-size: 13px;
+  color: #80868b;
+  margin-top: 2px;
+}
+
+.searchIcon {
+  margin-right: 0.875rem;
+}
+
+.autoCompleteInput {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, .87);
+  word-wrap: break-word;
+  outline: none;
+  display: flex;
+  flex: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+}
+
+.divider {
+  display: block;
+  border-top: 1px solid #e8eaed;
+  margin: 0 1.5rem 0 0.875rem;
+}
+

@@ -1,0 +1,33 @@
+.button {
+  border: 1px solid;
+  border-radius: 0.25rem;
+  font-family: arial, sans-serif;
+  font-size: 0.875rem;
+  padding: 0 1rem;
+  line-height: 1rem;
+  height: 2.25rem;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background-clip: border-box;
+}
+
+.button.light {
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  color: #3c4043;
+}
+
+.button.light:hover {
+  box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  color: #202124;
+}
+
+.button.primary {
+  background-color: rgb(43, 125, 233);
+  box-shadow: 0 1px 2px 0 rgba(66, 133, 244, 0.3), 0 1px 3px 1px rgba(66, 133, 244, 0.15);
+  border: 1px solid transparent;
+  color: white;
+}

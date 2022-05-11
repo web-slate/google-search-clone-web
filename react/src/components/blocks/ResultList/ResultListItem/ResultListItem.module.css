@@ -1,0 +1,88 @@
+.container {
+  display: block;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.58;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 30px;
+  position: relative;
+  font-weight: normal;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.linkContainer {
+  display: block;
+  flex: 0 0 auto;
+  flex-direction: row;
+}
+
+.linkContent {
+  font-weight: normal;
+  font-size: small;
+  line-height: 1.58;
+}
+
+.linkContent a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+.linkContent a .link {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #202124;
+}
+
+cite {
+  padding-top: 1px;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.linkContent a h3 {
+  font-family: arial, sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  line-height: 1.3;
+  padding-top: 5px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 3px;
+}
+
+.linkContent a:visited {
+  color: #609;
+}
+
+.descContainer {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: row;
+}
+
+.descContainer div {
+  word-wrap: break-word;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  display: -webkit-box;
+  overflow: hidden;
+  color: #4d5156;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2
+}
+

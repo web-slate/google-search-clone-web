@@ -1,0 +1,23 @@
+.iconButtonContainer {
+  position: relative;
+  line-height: normal;
+  white-space: nowrap;
+  color: black;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.iconButton {
+  display: inline-block;
+  outline: none;
+  vertical-align: middle;
+  border-radius: 100%;
+  box-sizing: border-box;
+  height: 2.5rem;
+  width: 2.5rem;
+  padding: 0.5rem;
+}
+
+.iconButton:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}

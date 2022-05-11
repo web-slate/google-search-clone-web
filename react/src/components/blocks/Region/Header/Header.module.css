@@ -1,0 +1,20 @@
+.topMenu {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  height: 3.75rem;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.topMenuContainer {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.topMenuContent {
+  min-width: auto;
+  height: 3rem;
+  color: black;
+  transition: box-shadow 250ms;
+}

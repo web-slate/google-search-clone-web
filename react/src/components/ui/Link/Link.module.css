@@ -1,0 +1,23 @@
+.link {
+  display: inline-block;
+  line-height: 1.5rem;
+  vertical-align: middle;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.primary {
+  color: #1a0dab;
+}
+
+.primary:visited {
+  color: #609;
+}
+
+.dark,.dark:visited {
+  color: rgba(0,0,0,0.87);
+}
